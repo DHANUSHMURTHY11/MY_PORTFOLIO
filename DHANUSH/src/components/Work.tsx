@@ -9,7 +9,7 @@ const projects: ProjectData[] = [
     title: "Urban Agri",
     category: "AI-Based Urban Farming Guidance",
     tools: "Python, AI/ML, Computer Vision, Flask, Full-Stack",
-    image: "/images/Solidx.png",
+    image: `${import.meta.env.BASE_URL}images/Solidx.png`,
     description: "Urban Agri is a comprehensive AI-driven platform for urban farmers, designed to optimize growing conditions and predict crop yields using machine learning and computer vision. The system analyzes real-time environmental factors to provide customized farming strategies.",
     features: [
       "Real-time crop disease detection using Computer Vision",
@@ -23,7 +23,7 @@ const projects: ProjectData[] = [
     title: "AI Competitive Intelligence",
     category: "Multi-Agent Knowledge Graph System",
     tools: "LangGraph, Neo4j, FastAPI, Ollama, Qwen 2.5 7B",
-    image: "/images/radix.png",
+    image: `${import.meta.env.BASE_URL}images/radix.png`,
     description: "A deep-tech application that automates competitive intelligence gathering by using a multi-agent orchestrated system. It builds a knowledge graph from disparate data sources to track competitors, market trends, and sentiment anomalies in near real-time.",
     features: [
       "Multi-agent architecture coordinated with LangGraph",

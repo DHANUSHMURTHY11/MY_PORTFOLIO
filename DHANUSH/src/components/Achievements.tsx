@@ -9,21 +9,21 @@ const achievements = [
     category: "Conversational AI & Full-Stack GenAI",
     description:
       "Engineered production-ready AI Call Agents and full-stack GenAI applications. Built real-time conversational pipelines using LLMs, speech-to-text, and text-to-speech technologies with scalable backend AI services.",
-    image: "/images/genai_developer.png",
+    image: `${import.meta.env.BASE_URL}images/genai_developer.png`,
   },
   {
     title: "Speed Cubing & Records",
     category: "WCA Competitions & National Records",
     description:
       "Member of Speed Cubing Bangalore. Organized WCA competitions including Karnataka Cube Championship 2024. Recognized by Asia Book of Records & India Book of Records (Team Recode — Mission Sindoor Cube Mosaic, Jan 2026).",
-    image: "/images/speedcubing_records.png",
+    image: `${import.meta.env.BASE_URL}images/speedcubing_records.png`,
   },
   {
     title: "NCC Cadet",
     category: "National Cadet Corps — A, B, C Certificates",
     description:
       "Completed NCC cadet training and achieved A, B, and C certificates, demonstrating discipline, leadership, and commitment to national service through rigorous training and examinations.",
-    image: "/images/ncc_cadet.png",
+    image: `${import.meta.env.BASE_URL}images/ncc_cadet.png`,
   },
 ];
 
