@@ -1,4 +1,4 @@
-declare module "gsap-trial/SplitText" {
+declare module "gsap/SplitText" {
   export class SplitText {
     chars: HTMLElement[];
     words: HTMLElement[];
@@ -9,7 +9,7 @@ declare module "gsap-trial/SplitText" {
   }
 }
 
-declare module "gsap-trial/ScrollSmoother" {
+declare module "gsap/ScrollSmoother" {
   import { Plugin } from "gsap";
   export class ScrollSmoother extends Plugin {
     static create(vars?: Record<string, any>): ScrollSmoother;
