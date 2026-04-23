@@ -1,0 +1,16 @@
+# Reference portfolio (not part of deployment)
+rajesh-portfolio/
+
+# Node modules
+DHANUSH/node_modules/
+DHANUSH/dist/
+
+# Broken LFS pointer (app uses character.enc instead)
+*.glb
+
+# Build artifacts
+*.tsbuildinfo
+
+# OS files
+.DS_Store
+Thumbs.db

@@ -1,0 +1,40 @@
+/* ── Achievements Section ── */
+.achievements-section {
+  position: relative;
+  z-index: 1;
+  background-color: var(--backgroundColor);
+  padding: 80px 0;
+}
+
+.achievements-section h2 {
+  font-size: 70px;
+  font-weight: 500;
+  margin-top: 0;
+  margin-bottom: 50px;
+}
+
+.achievements-section h2>span {
+  color: var(--accentColor);
+}
+
+.achievements-container {
+  margin: auto;
+}
+
+/* ── Responsive ── */
+@media only screen and (max-width: 1400px) {
+  .achievements-section h2 {
+    font-size: 50px;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .achievements-section {
+    padding: 50px 0;
+  }
+
+  .achievements-section h2 {
+    font-size: 40px;
+    margin-bottom: 30px;
+  }
+}
