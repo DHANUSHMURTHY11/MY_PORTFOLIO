@@ -2,9 +2,52 @@ import { useState, useCallback } from "react";
 import "./styles/Work.css";
 import WorkImage from "./WorkImage";
 import ProjectModal, { ProjectData } from "./ProjectModal";
-import { MdArrowBack, MdArrowForward } from "react-icons/md";
+import { MdArrowBack, MdArrowForward, MdArrowOutward } from "react-icons/md";
 
 const projects: ProjectData[] = [
+  {
+    title: "Schedura",
+    category: "Enterprise AI Healthcare Voice Agent Platform",
+    tools: "LLMs, FastAPI, AWS Lambda, DynamoDB, Redis, Voice AI (STT/TTS), Twilio, Google Calendar, Razorpay",
+    image: `${import.meta.env.BASE_URL}images/Maxlife.png`,
+    description: "Built a production-ready Agentic AI platform using LLMs, FastAPI, AWS Lambda, DynamoDB, Redis, Multi-Agent Systems, Voice AI (STT/TTS), Twilio, Google Calendar, and Razorpay. Implemented intelligent appointment scheduling, AI voice conversations, payment orchestration, calendar integration, reminder automation, and AI-generated consultation summaries within a scalable serverless architecture.",
+    features: [
+      "Intelligent appointment scheduling with Google Calendar integration",
+      "Real-time AI voice conversations (STT/TTS) powered by Twilio telephony",
+      "Payment orchestration integrated with Razorpay",
+      "Automated reminder workflows and AI consultation summaries",
+      "Scalable serverless architecture using AWS Lambda, DynamoDB & Redis"
+    ],
+    link: "https://schedura.digitransolutions.in/"
+  },
+  {
+    title: "AI Competitive Intelligence",
+    category: "Multi-Agent Knowledge Graph System",
+    tools: "LangGraph, Neo4j GraphRAG, FastAPI, Ollama, Qwen 2.5 7B",
+    image: `${import.meta.env.BASE_URL}images/radix.png`,
+    description: "Used LangGraph and Neo4j GraphRAG to analyze strategic positioning of major IT services firms (Infosys, TCS, Wipro, HCLTech, Accenture). Designed an autonomous multi-agent pipeline that crawls investor relations and news sources, extracts strategic entities into a knowledge graph using subject-predicate-object triples, and enables graph-based reasoning.",
+    features: [
+      "Multi-agent crawling pipeline for investor relations & news sources",
+      "Knowledge graph modeling using subject-predicate-object triples in Neo4j",
+      "Graph-based reasoning for partnership overlaps & AI expansion strategy",
+      "FastAPI backend integrated with Ollama (Qwen 2.5 7B) & interactive dashboard"
+    ],
+    link: "https://github.com/DHANUSHMURTHY11"
+  },
+  {
+    title: "GCP Agentic Solutions",
+    category: "Google Cloud Platform AI/ML Engineering",
+    tools: "GCP ADK, MCP (Model Context Protocol), LLMs, Prompt Engineering, Agent-to-Agent (A2A)",
+    image: `${import.meta.env.BASE_URL}images/sapphire.png`,
+    description: "Worked on client-side AI/ML solutions in the GCP ecosystem. Developed Proof of Concepts using GCP Agent Development Kit (ADK), multi-agent systems using MCP for log error detection, prompt evaluation, automated correction, and tool calling mechanisms.",
+    features: [
+      "Proof of Concepts (POCs) using GCP Agent Development Kit (ADK)",
+      "Multi-agent systems using MCP (Model Context Protocol) for error detection & correction",
+      "Prompt evaluation & agent performance tuning",
+      "Tool calling & Agent-to-Agent (A2A) collaboration for automated workflows"
+    ],
+    link: "https://github.com/DHANUSHMURTHY11"
+  },
   {
     title: "Urban Agri",
     category: "AI-Based Urban Farming Guidance",
@@ -17,22 +60,8 @@ const projects: ProjectData[] = [
       "Interactive dashboard for tracking farm metrics",
       "Full-stack architecture integrating Flask backend and GenAI"
     ],
-    link: "https://github.com/dhanush-xyz/urban-agri" 
-  },
-  {
-    title: "AI Competitive Intelligence",
-    category: "Multi-Agent Knowledge Graph System",
-    tools: "LangGraph, Neo4j, FastAPI, Ollama, Qwen 2.5 7B",
-    image: `${import.meta.env.BASE_URL}images/radix.png`,
-    description: "A deep-tech application that automates competitive intelligence gathering by using a multi-agent orchestrated system. It builds a knowledge graph from disparate data sources to track competitors, market trends, and sentiment anomalies in near real-time.",
-    features: [
-      "Multi-agent architecture coordinated with LangGraph",
-      "Graph-based relationships modeled via Neo4j",
-      "In-house optimized local LLMs inference using Ollama & Qwen 2.5 7B",
-      "High-performance REST API built on FastAPI"
-    ],
-    link: "https://github.com/dhanush-xyz/ai-competitive-intelligence"
-  },
+    link: "https://github.com/DHANUSHMURTHY11"
+  }
 ];
 
 const Work = () => {
@@ -109,17 +138,42 @@ const Work = () => {
                             <span className="tools-label">Tools & Features</span>
                             <p>{project.tools}</p>
                           </div>
-                          <button
-                            className="view-project-btn"
-                            onClick={() => setSelectedProject(project)}
-                            data-cursor="pointer"
-                          >
-                            View Project
-                          </button>
+                          <div style={{ display: "flex", gap: "12px", flexWrap: "wrap", marginTop: "16px" }}>
+                            <button
+                              className="view-project-btn"
+                              onClick={() => setSelectedProject(project)}
+                              data-cursor="pointer"
+                            >
+                              View Details
+                            </button>
+                            {project.link && (
+                              <a
+                                href={project.link}
+                                target="_blank"
+                                rel="noreferrer"
+                                className="view-project-btn"
+                                data-cursor="pointer"
+                                style={{
+                                  textDecoration: "none",
+                                  display: "inline-flex",
+                                  alignItems: "center",
+                                  gap: "6px"
+                                }}
+                              >
+                                Visit Live <MdArrowOutward />
+                              </a>
+                            )}
+                          </div>
                         </div>
                       </div>
                       <div className="carousel-image-wrapper">
-                        <WorkImage image={project.image} alt={project.title} />
+                        {project.link ? (
+                          <a href={project.link} target="_blank" rel="noreferrer" data-cursor="pointer">
+                            <WorkImage image={project.image} alt={project.title} />
+                          </a>
+                        ) : (
+                          <WorkImage image={project.image} alt={project.title} />
+                        )}
                       </div>
                     </div>
                   </div>
